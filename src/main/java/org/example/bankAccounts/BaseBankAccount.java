@@ -4,11 +4,11 @@ import org.example.people.BankAccountOwner;
 
 public class BaseBankAccount {
 
-    private String uuid;
+    private final String uuid;
 
-    private String accountNumber;
+    private final String accountNumber;
 
-    private BankAccountOwner owner;
+    private final BankAccountOwner owner;
 
     double balance;
 
