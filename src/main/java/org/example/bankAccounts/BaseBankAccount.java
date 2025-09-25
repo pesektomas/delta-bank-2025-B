@@ -35,16 +35,7 @@ public class BaseBankAccount {
         return balance;
     }
 
-    public void addBalance(double balance) {
-        this.balance += balance;
-    }
-
-    public void subtractBalance(double balance) {
-        double subtracted = this.balance - balance;
-        if (subtracted < 0) {
-            throw new IllegalArgumentException("Cannot subtract negative balance");
-        }
-
-        this.balance = subtracted;
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 }
