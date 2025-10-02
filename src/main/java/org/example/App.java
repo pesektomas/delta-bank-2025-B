@@ -5,6 +5,8 @@ import org.example.bankAccounts.SavingBankAccount;
 import org.example.bankAccounts.StudentBankAccount;
 import org.example.bankAccounts.factories.BankAccountFactory;
 import org.example.bankAccounts.generators.BankAccountNumberGenerator;
+import org.example.bankAccounts.serialization.BankAccountOwnerJsonSerializationService;
+import org.example.bankAccounts.serialization.Serialization;
 import org.example.bankAccounts.services.BankAccountBalanceService;
 import org.example.people.BankAccountOwner;
 import org.example.people.BankAccountOwnerFactory;
@@ -23,6 +25,11 @@ public class App {
 
             BankAccountOwner owner = bankAccountOwnerFactory.createBankAccountOwner("O-123", "Tomas", "Pesek");
             System.out.println(owner.getUuid() + ": " + owner.getFullName());
+
+
+            Serialization bankAccountOwnerJsonSerializationService = new BankAccountOwnerJsonSerializationService();
+            bankAccountOwnerJsonSerializationService.serialization(owner);
+
 
             BaseBankAccount account1 = bankAccountFactory.createBaseBankAccount("base-bank-account-123", owner, 500);
             BaseBankAccount account2 = bankAccountFactory.createSavingBankAccount("saving-bank-account-123", owner, 500);
