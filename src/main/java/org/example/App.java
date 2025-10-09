@@ -28,6 +28,8 @@ public class App {
 
 
             Serialization bankAccountOwnerJsonSerializationService = new BankAccountOwnerJsonSerializationService();
+
+
             bankAccountOwnerJsonSerializationService.serialization(owner);
 
 
@@ -63,5 +65,4 @@ public class App {
             System.out.println("Error: " + e.getMessage());
         }
     }
-
 }
